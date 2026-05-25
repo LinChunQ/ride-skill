@@ -1,0 +1,23 @@
+name: Build and Release Skill ZIP
+
+on:
+  push:
+    tags:
+      - 'v*' # 当你推送以 v 开头的 tag 时触发 (例如 v1.0.0)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create ZIP archive
+        run: zip -r ride-flow.zip SKILL.md manifest.json
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ride-flow.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

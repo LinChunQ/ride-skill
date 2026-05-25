@@ -39,6 +39,23 @@ docs/
 
 重启或重新加载 skills 后即可使用。
 
+## 发布新版本 (Release)
+
+本项目已配置 GitHub Actions 全自动打包工作流。当修改完核心逻辑（如 `SKILL.md`）需要发布新版本时，请严格按照以下命令执行，系统会自动在 GitHub Releases 页面生成供 CC Switch 或其他工具直接下载的 ZIP 安装包：
+
+```bash
+# 1. 提交本地的代码变更到主分支
+git add .
+git commit -m "feat: 描述你这次更新了什么功能"
+git push
+
+# 2. 为本次发布打上版本号 Tag（⚠️ 注意：Tag 名称必须以 v 开头）
+git tag v1.0.1
+
+# 3. 推送 Tag 到远端，这一步会触发自动打包发布流程
+git push --tags
+```
+
 ## 使用方法
 
 ### 方式 1: 在支持 skill 的工具中（如 Claude Code）

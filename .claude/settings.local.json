@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -m 'feat: 优化 RIDE 工作流命名和文档结构 *)",
+      "Bash(git push *)"
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 # RIDE Flow - 结构化开发工作流
-
+![Downloads](https://img.shields.io/github/downloads/LinChunQ/ride-skill/total)
 一个通用的 AI 编程助手工作流 skill，通过四个顺序阶段引导功能实现，并自动管理项目文档。
 
 ## 概述
